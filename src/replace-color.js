@@ -1,9 +1,13 @@
 const convertColor = require('./utils/convert-color')
 const getDelta = require('./utils/get-delta')
 const isNumber = require('./utils/is-number')
-const Jimp = require('jimp')
+let Jimp = require('jimp')
 const ReplaceColorError = require('./utils/replace-color-error')
 const validateColors = require('./utils/validate-colors')
+
+if (Jimp.default) {
+  Jimp = Jimp.default
+}
 
 module.exports = ({
   image,
